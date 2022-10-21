@@ -4,36 +4,49 @@
 //23432 -> да
 
 
-int Prompt(string message)
+int Prompt(string message)        //читаем число
 {
     System.Console.Write("Введите пятизначное число:");
     int number = Convert.ToInt32(Console.ReadLine());
     return number;
 }
 
-int N = Prompt("Введите ваше число: ");
-bool ValidateNumber(int N);
+int number = Prompt("Введите ваше число: ");   //присваиваем число
+
+bool ValidateNumber(int number)               // проверка на диапазон чисел
 {
-    if (N < 10000 || N > 99999)
+    if (number < 10000 || number > 99999)
     {
         System.Console.Write("Ваше число не пятизначное");
-        return false;
+        return true;
     }
-    return true;
+    return false;
 }
 
-/*if (!ValidateNumber(N))
+if (!ValidateNumber(number))    // копипаст (хз) но без нее не работает???
 {
     return;
 }
-else if (N % 10 == N / 10000 && N / 1000 == N / 10) ;
+
+bool IsAPalindrome(int number)
+{
+    if (number % 10 == number / 10000 && number / 1000 == number / 10)
+        return true;
+}
+
+if (IsAPalindrome(number))
 {    
-    Console.Write("Ваше число asdasе");
-}*/
-int N = Prompt("Введите ваше число: ");
+    Console.Write("Ваше число является палиндромом");
+}
+else
+{    
+    Console.Write("Ваше число НЕ является палиндромом");
+}
+
+/*
 int Oldn = N;
 int Newn = 0;
-if (ValidateNumber(N))
+if (!ValidateNumber(N))
 {
     return;
 }
@@ -47,5 +60,6 @@ if (Oldn == Newn)
 {
     System.Console.WriteLine("asdasd");
 }
+*/
 
 
