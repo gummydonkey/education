@@ -11,11 +11,9 @@ int Prompt(string message)        //читаем число
     return number;
 }
 
-int number = Prompt("Введите ваше число: ");   //присваиваем число
-
-bool ValidateNumber(int number)               // проверка на диапазон чисел
+bool ValidateNumber(int number)               // проверка на диапазон чисел. не до конца понятно как рабоает
 {
-    if (number < 10000 || number > 99999)
+    if (number < 10000 && number > 99999)
     {
         System.Console.Write("Ваше число не пятизначное");
         return true;
@@ -23,23 +21,32 @@ bool ValidateNumber(int number)               // проверка на диап�
     return false;
 }
 
-if (!ValidateNumber(number))    // копипаст (хз) но без нее не работает???
+bool IsAPalindrome(int number)
+{
+    int rev = 0;
+    int tempnumber = number;
+    while (number > 0)
+    {
+        int value = number % 10;
+        int rev = rev * 10 + value;
+        int number = number / 10;
+    }
+    return tempnumber == rev;
+}
+int number = Prompt("Введите ваше число: ");   //присваиваем число
+
+
+if (ValidateNumber(number))    // копипаст (хз) но без нее не работает???
 {
     return;
 }
 
-bool IsAPalindrome(int number)
-{
-    if (number % 10 == number / 10000 && number / 1000 == number / 10)
-        return true;
-}
-
 if (IsAPalindrome(number))
-{    
+{
     Console.Write("Ваше число является палиндромом");
 }
 else
-{    
+{
     Console.Write("Ваше число НЕ является палиндромом");
 }
 
