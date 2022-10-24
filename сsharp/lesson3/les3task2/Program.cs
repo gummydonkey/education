@@ -23,7 +23,7 @@ int [] InputPoint(int point)
 
 double Power2(int arg)
 {
-    return Math.Pow(arg,2);
+    return Math.Pow(arg,2);               // Не совсем понятно квадрат чего
 }
 
 int [] p1 = InputPoint (1);
