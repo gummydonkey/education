@@ -46,6 +46,10 @@ if (ValidateNumber(number))    // копипаст (хз) но без нее н�
     return;
 }
 
+bool IsAPalindrome(int number);
+{
+    return (number == Reverse(number));
+}
 if (IsAPalindrome(number))
 {
     Console.Write("Ваше число является палиндромом");
