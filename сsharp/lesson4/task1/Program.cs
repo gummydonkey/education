@@ -1,2 +1,39 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿//Задача 1: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B (и в нулевую степень). Использовать свои функции, не использовать Math.Pow
+//3, 5 -> 243 (3⁵)
+//2, 4 -> 16
+
+System.Console.WriteLine("Возведение числа А в степень В");
+int Prompt(string message)        //читаем число
+{
+    System.Console.Write(message);
+    int number = Convert.ToInt32(Console.ReadLine());
+    return number;
+}
+int number = Prompt("Введите ваше число A: ");
+int sqr = Prompt("Введите ваше число B: ");
+
+
+System.Console.WriteLine($"1 число {number}:");
+System.Console.WriteLine($"2 число {sqr}:");
+
+void Sqr(int number)
+{
+    int btemp = 1;
+    int i = 0;
+    while (i < sqr)
+    {
+        btemp = number * btemp;    
+        i++;
+        Console.WriteLine($"1 -> {i} - {btemp}");
+    }
+    
+    return;                             
+}
+
+Sqr(number);
+/*
+if (Sqr(number));
+{
+    System.Console.WriteLine($"1Введите число {btemp}:");
+}
+*/
