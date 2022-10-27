@@ -16,24 +16,18 @@ int sqr = Prompt("Введите ваше число B: ");
 System.Console.WriteLine($"1 число {number}:");
 System.Console.WriteLine($"2 число {sqr}:");
 
-void Sqr(int number)
+int Sqr(int number)
 {
-    int btemp = 1;
+    int res = 1;
     int i = 0;
     while (i < sqr)
     {
-        btemp = number * btemp;    
+        res = number * res;    
         i++;
-        Console.WriteLine($"1 -> {i} - {btemp}");
+        Console.WriteLine($"{i} - {res}");
     }
-    
-    return;                             
+
+    return res;                             
 }
 
-Sqr(number);
-/*
-if (Sqr(number));
-{
-    System.Console.WriteLine($"1Введите число {btemp}:");
-}
-*/
+System.Console.WriteLine(Sqr(number));
