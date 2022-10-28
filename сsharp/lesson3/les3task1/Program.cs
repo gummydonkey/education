@@ -4,6 +4,7 @@
 //12821 -> да
 //23432 -> да
 
+/////////////////НЕ ПОЙМУ ЧТО С ВАЛИДАЦИЕЙ
 
 int Prompt(string message)        //читаем число
 {
@@ -14,9 +15,9 @@ int Prompt(string message)        //читаем число
 
 bool ValidateNumber(int number)
 {
-    if (number < 10000 && number > 99999)
+    if (number < 10000 & number > 99999)
     {
-        System.Console.Write("Ваше число не пятизначное");
+        Console.Write("Ваше число не пятизначное");
         return true;
     }
     return false;
@@ -44,6 +45,9 @@ if (ValidateNumber(number))
 {
     return;
 }
+
+bool a = ValidateNumber(number);
+Console.Write($"#{ValidateNumber(number)}");
 
 if (Reverse(number))
 {
