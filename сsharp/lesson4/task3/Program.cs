@@ -15,7 +15,7 @@ int num2 = Prompt("Задайте верхний предел чисел мас�
 
 int CreateArray(int num1, int num2)
 {
-    int [] array = new int[8];
+    int[] array = new int[8];
     Random random = new Random();
     for (int i = 0; i < 8; i++)
     {

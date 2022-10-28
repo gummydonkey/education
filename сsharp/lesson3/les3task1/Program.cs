@@ -22,43 +22,19 @@ bool ValidateNumber(int number)
     return false;
 }
 
-int Reverse(int number)
+bool Reverse(int number)
 {
+    int tempnumber = number;
     int reverse = 0;
-    while (number > 0)
+    while (tempnumber > 0)
     {
-        int value = number % 10;
-        reverse = reverse * 10 + value;
-        int tempnumber = number / 10;
-        Console.Write($"1 -> {tempnumber} - {reverse}");
+        int lastvalue = tempnumber % 10;              //    2 4 6 4 2   - * * * * 2
+        reverse = reverse * 10 + lastvalue;           //    2 * 10 + себя же   = 20
+        tempnumber = tempnumber / 10;                 //    2 4 6 4
+        Console.Write($" -> {tempnumber} - {reverse}");
     }
-    return reverse;
+    return number == reverse;
 }
-
-bool IsAPalindrome(int number)
-{
-
-    if (number == Reverse(number))
-    {
-        Console.WriteLine(Reverse(number));
-        Console.WriteLine(number);
-        return number == Reverse(number);
-    }
-    else
-    {
-        Console.WriteLine(Reverse(number));
-        Console.WriteLine(number);
-        return false;
-        
-    }
-    
-
-
-    // почему вытягиваем Reverse(number) мы ведь возвращали reverse. 
-    //Или мы тут упоминаем метод как мы его обозвали выше? 
-    //т.к. вохвращает значение которое записывается в number этого метода?
-}
-
 
 
 int number = Prompt("Введите ваше число: ");
@@ -69,12 +45,12 @@ if (ValidateNumber(number))
     return;
 }
 
-if (IsAPalindrome(number))
+if (Reverse(number))
 {
-    Console.Write("Ваше число является палиндромом");
+    Console.Write("      Ваше число является палиндромом");
 }
 else
 {
-    Console.Write("Ваше число НЕ является палиндромом");
+    Console.Write("       Ваше число НЕ является палиндромом");
 }
 
