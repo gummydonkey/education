@@ -13,8 +13,8 @@ int Prompt(string message)
 int num1 = Prompt("Задайте нижний предел чисел массива: ");
 int num2 = Prompt("Задайте верхний предел чисел массива: ");
 
-//int CreateArray(int num1, int num2)
-//{
+void CreateArray(int num1, int num2)
+{
     int[] array = new int[8];
     Random random = new Random();
     for (int i = 0; i < 8; i++)
@@ -22,6 +22,7 @@ int num2 = Prompt("Задайте верхний предел чисел мас�
         array[i] = random.Next(num1, num2);
         Console.Write($"{array[i]} ");
     }
-   // return array;
-//}
-Console.WriteLine(array);
+    return;
+}
+int result = CreateArray();
+Console.WriteLine(result);
