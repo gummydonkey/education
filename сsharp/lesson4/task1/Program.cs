@@ -12,22 +12,17 @@ int Prompt(string message)        //читаем число
 int number = Prompt("Введите ваше число A: ");
 int sqr = Prompt("Введите ваше число B: ");
 
-
-System.Console.WriteLine($"1 число {number}:");
-System.Console.WriteLine($"2 число {sqr}:");
-
 int Sqr(int number)
 {
     int res = 1;
     int i = 0;
     while (i < sqr)
     {
-        res = number * res;    
+        res = number * res;
         i++;
-        Console.WriteLine($"{i} - {res}");
     }
 
-    return res;                             
+    return res;
 }
 
 System.Console.WriteLine(Sqr(number));
