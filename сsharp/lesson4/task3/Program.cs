@@ -22,7 +22,7 @@ void CreateArray(int num1, int num2)
         array[i] = random.Next(num1, num2);
         Console.Write($"{array[i]} ");
     }
-    return;
+    return array;
 }
-int result = CreateArray();
+var result = CreateArray();
 Console.WriteLine(result);
