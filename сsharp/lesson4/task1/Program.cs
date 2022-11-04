@@ -18,11 +18,11 @@ int Sqr(int number)
     int i = 0;
     while (i < sqr)
     {
-        res = number * res;
+        res = number * res;    
         i++;
     }
 
-    return res;
+    return res;                             
 }
 
 System.Console.WriteLine(Sqr(number));
