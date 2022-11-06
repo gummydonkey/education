@@ -8,7 +8,7 @@
 int[,] array2D = new int[,] {{ 1, 2, 3 }, { 3, 4, 5 }};
 
 
-int [,] Print(int[,] array2D)
+int [,] Print(int[,] array2D)           //принт массива
 {
     for (int i = 0; i < array2D.GetLength(0); i++)
     {
@@ -22,7 +22,7 @@ int [,] Print(int[,] array2D)
     return array2D;
 }
 
-int maxFirstLine(int[,] array2D)
+int MaxFirstLine(int[,] array2D)            //масксимум 1 строки
 {
     int maxFirst = array2D[0,0];
     for (int j = 0; j < array2D.GetLength(1); j++)
@@ -30,12 +30,11 @@ int maxFirstLine(int[,] array2D)
         if (maxFirst < array2D[0,j])
             maxFirst = array2D[0,j];
     }
-    Console.WriteLine($"{maxFirst} maxFL");
     return maxFirst;
 }
 
 
-int maxSecondLine(int[,] array2D)
+int MaxSecondLine(int[,] array2D)           //максимум 2 строки
 {
     int maxSecond = array2D[1,0];
     for (int j = 0; j < array2D.GetLength(1); j++)
@@ -43,11 +42,10 @@ int maxSecondLine(int[,] array2D)
         if (maxSecond < array2D[1,j])
             maxSecond = array2D[1,j];
     }
-    Console.WriteLine($"{maxSecond} maxSL");
     return maxSecond;
 }
 
-int minFirstColumn(int[,] array2D)
+int MinFirstColumn(int[,] array2D)          //минимум 1 столбца
 {
     int minFirstCol = array2D[0,0];
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -55,11 +53,10 @@ int minFirstColumn(int[,] array2D)
         if (minFirstCol > array2D[i,0])
             minFirstCol = array2D[i,0];
     }
-    Console.WriteLine($"{minFirstCol} min1");
     return minFirstCol;
 }
 
-int minSecondColumn(int[,] array2D)
+int MinSecondColumn(int[,] array2D)         //минимум 2 столбца
 {
     int minSecondCol = array2D[0,1];
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -67,11 +64,10 @@ int minSecondColumn(int[,] array2D)
         if (minSecondCol > array2D[i,1])
             minSecondCol = array2D[i,1];
     }
-    Console.WriteLine($"{minSecondCol} min2");
     return minSecondCol;
 }
 
-int minThirdColumn(int[,] array2D)
+int MinThirdColumn(int[,] array2D)          //минимум 3 столбца
 {
     int minThirdCol = array2D[0,2];
     for (int i = 0; i < array2D.GetLength(0); i++)
@@ -79,19 +75,40 @@ int minThirdColumn(int[,] array2D)
         if (minThirdCol > array2D[i,2])
             minThirdCol = array2D[i,2];
     }
-    Console.WriteLine($"{minThirdCol} min3");
     return minThirdCol;
 }
-void SumOfMax(int maxFirstLine, int maxSecondLine)
+int SumOfMax(int maxFirstLine, int maxSecondLine)       //сумма максимумов строк
 {
-Console.WriteLine($"{maxFirstLine(array2D)} + {maxSecondLine(array2D)}");
+    int sumMax = maxFirstLine + maxSecondLine;
+    return sumMax;
 }
-Print(array2D);
-maxFirstLine(array2D);
-maxSecondLine(array2D);
-minFirstColumn(array2D);
-minSecondColumn(array2D);
-minThirdColumn(array2D);
-Console.WriteLine();
-Console.WriteLine(SumOfMax(maxFirstLine));
 
+int SumOfMin(int minFirstColumn, int minSecondColumn, int minThirdColumn)       //сумма минимумов столбцов
+{
+    int sumMin = minFirstColumn + minSecondColumn + minThirdColumn;
+    return sumMin;
+}
+
+void FinalResult(int sumOfMax, int sumOfMin)        //максималки - минималки
+{
+    int finalResult = sumOfMax - sumOfMin;
+    Console.WriteLine($"Итоговая разность: {finalResult}");
+}
+
+Print(array2D);
+
+int maxFirstLine = MaxFirstLine(array2D);
+int maxSecondLine = MaxSecondLine(array2D);
+
+int minFirstColumn = MinFirstColumn(array2D);
+int minSecondColumn = MinSecondColumn(array2D);
+int minThirdColumn = MinThirdColumn(array2D);
+
+int sumOfMax = SumOfMax(MaxFirstLine(array2D), MaxSecondLine(array2D));
+int sumOfMin = SumOfMin(MinFirstColumn(array2D), MinSecondColumn(array2D), MinThirdColumn(array2D));
+
+
+Console.WriteLine();
+Console.WriteLine($"Сумма максимумов строк = {sumOfMax}");
+Console.WriteLine($"Сумма минимумов столбцов = {sumOfMin}");
+FinalResult(sumOfMax,sumOfMin);
