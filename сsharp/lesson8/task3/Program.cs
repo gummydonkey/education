@@ -1,2 +1,3 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿/*
+Задайте две матрицы. Напишите программу, которая будет находить произведение двух матриц.
+*/
