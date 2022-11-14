@@ -67,3 +67,4 @@ int[,] arrB = CreateArrayB();
 PrintArr(arrA, arrB);
 System.Console.WriteLine();
 ArrResult(arrA,arrB);
+System.Console.WriteLine("Извините я не понял алгоритм приведенный на википедии");

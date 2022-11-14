@@ -49,7 +49,6 @@ int[,] SortingArray(int[,] arr)
                     temp = arr[i,j];
                     arr[i,j] = arr[i,k];
                     arr[i,k] = temp;
-                    // да, перестарался с циклом в цикле но другого в голову не пришло
                 }
             }
         }
