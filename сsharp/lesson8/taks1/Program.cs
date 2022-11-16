@@ -5,12 +5,12 @@
 
 
 
-int [,] CreateArray()
+int[,] CreateArray()
 {
     Random rnd = new Random();
-    int [,] arr = new int[rnd.Next(3, 5), rnd.Next(3, 5)];
-    
-    
+    int[,] arr = new int[rnd.Next(3, 5), rnd.Next(3, 5)];
+
+
     for (int i = 0; i < arr.GetLength(0); i++)
     {
         for (int j = 0; j < arr.GetLength(1); j++)
@@ -21,7 +21,7 @@ int [,] CreateArray()
     return arr;
 }
 
-void PrintArr(int [,] arr)
+void PrintArr(int[,] arr)
 {
     for (int i = 0; i < arr.GetLength(0); i++)
     {
@@ -32,11 +32,33 @@ void PrintArr(int [,] arr)
         }
         Console.WriteLine();
     }
-    
+
 }
 
+int[,] SortingArray(int[,] arr)
+{
+    int temp;
+    for (int i = 0; i < arr.GetLength(0); i++)
+    {
+        for (int j = 0; j < arr.GetLength(1) - 1; j++)
+        {
+            for (int k = j +1; k < arr.GetLength(1) ; k++)
+            {
+                if (arr[i,j] < arr[i,k])
+                {
+                    temp = arr[i,j];
+                    arr[i,j] = arr[i,k];
+                    arr[i,k] = temp;
+                }
+            }
+        }
+    }
+    return arr;
+}
 
 CreateArray();
 int[,] arr = CreateArray();
 PrintArr(arr);
 System.Console.WriteLine();
+int[,] sortingArray = SortingArray(arr);
+PrintArr(arr);

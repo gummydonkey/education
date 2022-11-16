@@ -13,15 +13,6 @@ int Prompt(string message)        //читаем число
     return number;
 }
 
-bool ValidateNumber(int number)
-{
-    if (number < 10000 & number > 99999)
-    {
-        Console.Write("Ваше число не пятизначное");
-        return true;
-    }
-    return false;
-}
 
 bool Reverse(int number)
 {
@@ -32,7 +23,7 @@ bool Reverse(int number)
         int lastvalue = tempnumber % 10;              //    2 4 6 4 2   - * * * * 2
         reverse = reverse * 10 + lastvalue;           //    2 * 10 + себя же   = 20
         tempnumber = tempnumber / 10;                 //    2 4 6 4
-        Console.Write($" -> {tempnumber} - {reverse}");
+        //Console.Write($" -> {tempnumber} - {reverse}");
     }
     return number == reverse;
 }
@@ -40,13 +31,22 @@ bool Reverse(int number)
 
 int number = Prompt("Введите ваше число: ");
 
+bool ValidateNumber(int number)
+{
+    if (number < 10000 & number > 99999)
+    {
+        Console.Write("Ваше число не пятизначное");
+        return true;
+    }
+    return false;
+}
 
 if (ValidateNumber(number))
 {
     return;
 }
 
-bool a = ValidateNumber(number);
+//bool a = ValidateNumber(number);
 Console.Write($"#{ValidateNumber(number)}");
 
 if (Reverse(number))
