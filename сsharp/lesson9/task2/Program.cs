@@ -14,12 +14,12 @@ int Prompt(string message)
 int PrintSum(int m, int n)
 {
     if (m > n) return m;
-    PrintSum(m + (m +1), n);
+    PrintSum(m + (m + 1), n);
 }
 
 
 int m = 3;//Prompt("Введите ваше число M: ");
 int n = 9;//Prompt("Введите ваше число N: ");
 //PrintSum(m, n);
-int res = PrintSum(m, n);
-System.Console.WriteLine(res);
+//int res = PrintSum(m, n);
+System.Console.WriteLine(PrintSum(m, n));
