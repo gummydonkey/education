@@ -55,4 +55,4 @@ int[,] arr = CreateArray();
 PrintArr(arr);
 System.Console.WriteLine();
 int[] sumArr = SumsRows(arr);
-Console.WriteLine(sumArr);
+Console.WriteLine(SumsRows(arr));
