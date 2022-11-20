@@ -11,19 +11,19 @@ int Prompt(string message)
     return number;
 }
 
-void PrintNum(int m, int n)
+int PrintNum(int m, int n)
 {
-    if (m > n) return;
+    if (m == n) return m;
 
     if (m % 2 == 0)
     {
-        System.Console.WriteLine(m);
         PrintNum(m + 2, n);
+        System.Console.WriteLine(m);
     }
     else
     {
-        System.Console.WriteLine(m + 1);
         PrintNum(m + 1, n);
+        System.Console.WriteLine(m);
     }
 }
 
