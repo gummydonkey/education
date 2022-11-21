@@ -11,23 +11,18 @@ int Prompt(string message)
     return number;
 }
 
-int PrintNum(int m, int n)
+void PrintNum(int m, int n)
 {
-    if (m == n) return m;
-
+    if (m > n) return;
     if (m % 2 == 0)
     {
+        System.Console.WriteLine(m);
         PrintNum(m + 2, n);
-        System.Console.WriteLine(m);
     }
-    else
-    {
-        PrintNum(m + 1, n);
-        System.Console.WriteLine(m);
-    }
+    else PrintNum(m + 1, n);
 }
 
-int m = 3;//Prompt("Введите ваше число M: ");
-int n = 9;//Prompt("Введите ваше число N: ");
+int m = Prompt("Введите ваше число M: ");
+int n = Prompt("Введите ваше число N: ");
 PrintNum(m, n);
 
